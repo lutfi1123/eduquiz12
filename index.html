@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>EduQuiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🎓 EduQuiz</h1>
+
+  <!-- HOME -->
+  <div id="home" class="page active">
+    <input type="text" id="playerName" placeholder="Masukkan nama kamu">
+    <button onclick="startQuiz()">Mulai Quiz</button>
+    <button onclick="showPage('add')">Tambah Soal</button>
+    <button onclick="showPage('rank')">Peringkat</button>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" class="page">
+    <p id="timer">Waktu: 30</p>
+    <h3 id="question"></h3>
+    <div id="options"></div>
+  </div>
+
+  <!-- SKOR -->
+  <div id="score" class="page">
+    <h2>Skor Kamu</h2>
+    <p id="finalScore"></p>
+    <button onclick="showPage('rank')">Lihat Peringkat</button>
+    <button onclick="showPage('home')">Kembali Home</button>
+  </div>
+
+  <!-- TAMBAH SOAL -->
+  <div id="add" class="page">
+    <h2>Tambah Soal</h2>
+    <input id="newQ" placeholder="Pertanyaan">
+    <input id="optA" placeholder="Jawaban A">
+    <input id="optB" placeholder="Jawaban B">
+    <input id="optC" placeholder="Jawaban C">
+    <select id="correctOpt">
+      <option value="0">Jawaban Benar: A</option>
+      <option value="1">Jawaban Benar: B</option>
+      <option value="2">Jawaban Benar: C</option>
+    </select>
+    <button onclick="addQuestion()">Tambah Soal</button>
+    <button onclick="showPage('home')">Kembali</button>
+  </div>
+
+  <!-- PERINGKAT -->
+  <div id="rank" class="page">
+    <h2>Peringkat</h2>
+    <ol id="ranking"></ol>
+    <button onclick="showPage('home')">Kembali</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
